@@ -42,7 +42,7 @@ import React from 'react';
            return (
              <>
                <Input label="Feedback" placeholder="Enter your feedback" />
-               <Button label="Submit" onClick={() => alert('Form Submitted!')} />
+               <Button label="Submit" className='submit' onClick={() => alert('Form Submitted!')} />
              </>
            );
          default:

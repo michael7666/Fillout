@@ -12,11 +12,16 @@ body {
 .navigation {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
   margin-bottom: 20px;
   background-color: white;
   padding: 10px;
   border-radius: 4px;
+  scrollbar-width: none;
+}
+
+.navigation::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .page-button {
@@ -30,7 +35,7 @@ body {
   border: none;
   cursor: pointer;
   position: relative;
-  transition: background-color 0.2s;
+  transition: none
 }
 
 .page-button.active {
@@ -38,13 +43,32 @@ body {
   color: white;
 }
 
+.submit {
+   background-color: #f6ce3b;
+   display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: none
+}
+
 .page-button:hover {
   background-color: #e5e7eb;
 }
 
+.page-button.dragging {
+  cursor: grabbing;
+  background-color: #d1d5db;
+  transition: none;
+}
+
 .add-button {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   background-color: #d1d5db;
   border-radius: 50%;
   display: flex;
@@ -54,12 +78,12 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  right: -22px;
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.2s, background-color 0.2s;
+  z-index: 10;
 }
 
 .page-button:hover .add-button,
@@ -100,8 +124,9 @@ body {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  min-width: 120px;
+  min-width: 150px;
   transform: translateX(-50%);
+  top: 35%;
 }
 
 .settings-header {
@@ -111,6 +136,20 @@ body {
   border-bottom: 1px solid #e5e7eb;
   color: #66676a;
   text-align: center;
+}
+
+.page-content {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  outline: none;
+  gap: 3px;
+  display: flex;
+  align-items: center;
 }
 
 .context-menu button {
@@ -146,19 +185,18 @@ body {
 }
 
 .draggable-item {
-  touch-action: none;
-  user-select: none;
-}
-
-.draggable-item:active {
-  cursor: move;
-}
-
-.drag-handle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  padding: 4px;
-  cursor: move;
-  user-select: none;
+  gap: 4px;
   touch-action: none;
+  user-select: none;
+}
+
+[react-beautiful-dnd-placeholder] {
+  display: inline-block;
+  width: auto;
+  min-width: 100px; /* Adjust based on your tab width */
+  height: 32px; /* Match page-button height */
+  margin: 0 2px;
+  background: transparent;
 }
