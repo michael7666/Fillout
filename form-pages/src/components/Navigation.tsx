@@ -121,7 +121,7 @@ const Navigation: React.FC<NavigationProps> = ({
                       }}
                     >
                       <button
-                        onClick={(e) => {
+                        onClick={() => {
                           // Only trigger if not dragging
                           if (!snapshot.isDragging) {
                             setActivePage(page.id);
