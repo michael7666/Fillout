@@ -1,0 +1,164 @@
+body {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.page-button {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background-color: rgb(243, 237, 237);
+  color: #4b5563;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.page-button.active {
+  background-color: #f6ce3b;
+  color: white;
+}
+
+.page-button:hover {
+  background-color: #e5e7eb;
+}
+
+.add-button {
+  width: 24px;
+  height: 24px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.page-button:hover .add-button,
+.page-button.active .add-button {
+  opacity: 1;
+}
+
+.add-button:hover {
+  background-color: #9ca3af;
+}
+
+.menu-button {
+  width: 24px;
+  height: 24px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s;
+}
+
+.menu-button:hover {
+  background-color: #9ca3af;
+}
+
+.context-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 120px;
+  transform: translateX(-50%);
+}
+
+.settings-header {
+  padding: 8px 16px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e5e7eb;
+  color: #66676a;
+  text-align: center;
+}
+
+.context-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.context-menu button:hover {
+  background-color: #f4f4f4;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.draggable-item {
+  touch-action: none;
+  user-select: none;
+}
+
+.draggable-item:active {
+  cursor: move;
+}
+
+.drag-handle {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: move;
+  user-select: none;
+  touch-action: none;
+}
